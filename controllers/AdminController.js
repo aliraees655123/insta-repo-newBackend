@@ -153,7 +153,7 @@ exports.updateBlog = async (req, res) => {
     {
 
         console.log("images.photo1[0].filename",images.photo1[0].filename)
-        data.img1 = `http://localhost:6002/photo/${images.photo1[0].filename}`;
+        data.img1 = `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo1[0].filename}`;
     }
   
 
@@ -164,7 +164,7 @@ exports.updateBlog = async (req, res) => {
     if(images?.photo2[0]?.filename)
     {
 
-        data.img2 = `http://localhost:6002/photo/${images.photo2[0].filename}`;
+        data.img2 = `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo2[0].filename}`;
 
     }
 
