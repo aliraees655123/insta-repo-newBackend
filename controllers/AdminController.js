@@ -80,35 +80,35 @@ exports.addBlog = async (req, res) => {
   let { title, description, publisherName, p1, p2, p3, p4, title2, date } =
     req.body;
 
-    console.log("req.body",req.body,images)
-  // try {
-  //   let data = new Blog({
-  //     title: title,
-  //     description: description,
-  //     publisherName: publisherName,
-  //     p1: p1,
-  //     p2: p2,
-  //     p3: p3,
-  //     p4: p4,
-  //     title2: title2,
-  //     date: date,
-  //     img1: `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo1[0].filename}`,
-  //     img2: `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo2[0].filename}`,
+    console.log("req.body",req.body)
+  try {
+    let data = new Blog({
+      title: title,
+      description: description,
+      publisherName: publisherName,
+      p1: p1,
+      p2: p2,
+      p3: p3,
+      p4: p4,
+      title2: title2,
+      date: date,
+      img1: `https://defiant-newt-suspenders.cyclic.app/photo/${req.file.filename}`,
+      // img2: `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo2[0].filename}`,
   
-  //   });
-  //   await data.save();
-  //   res.status(200).json({
-  //     message: "Blog Created",
-  //     status: true,
-  //     data,
-  //   });
-  // } catch (error) {
-  //   res.status(500).json({
-  //     Error_Message: error,
-  //     status: false,
-  //     statusText: "Blog not created",
-  //   });
-  // }
+    });
+    await data.save();
+    res.status(200).json({
+      message: "Blog Created",
+      status: true,
+      data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      Error_Message: error,
+      status: false,
+      statusText: "Blog not created",
+    });
+  }
 };
 
 //Delete Blog
