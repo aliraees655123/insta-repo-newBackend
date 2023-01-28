@@ -104,16 +104,11 @@ exports.addBlog = async (req, res) => {
       data,
     });
   } catch (error) {
-    // res.status(500).json({
-    //   Error_Message: error,
-    //   status: false,
-    //   statusText: "Blog not created",
-    // });
-    res.status(error.status || 500);
-res.json({
-  message: error.message,
-  error: error
-});
+    res.status(500).json({
+      Error_Message: error,
+      status: false,
+      statusText: "Blog not created",
+    });
   }
 };
 

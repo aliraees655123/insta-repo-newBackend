@@ -15,6 +15,9 @@ app.use("/photo", express.static("upload"));
 
 app.use("/admin",adminRouter);
 
+///
+app.set('view engine', 'jade');
+
 
 // app.use(express.json());
 // app.use(cors());
