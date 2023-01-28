@@ -9,6 +9,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+app.use("/photo", express.static("upload"));
 
 app.use("/admin",adminRouter);
 

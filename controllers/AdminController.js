@@ -90,8 +90,8 @@ exports.addBlog = async (req, res) => {
       p4: p4,
       title2: title2,
       date: date,
-      img1: `http://localhost:6002/photo/${images.photo1[0].filename}`,
-      img2: `http://localhost:6002/photo/${images.photo2[0].filename}`,
+      img1: `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo1[0].filename}`,
+      img2: `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo2[0].filename}`,
       //   img2:`http://localhost:5000/profile/${req.file.filename}`,
     });
     await data.save();
