@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
@@ -15,8 +16,28 @@ app.use("/photo", express.static("upload"));
 app.use("/admin",adminRouter);
 
 
+// app.use(express.json());
+// app.use(cors());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+    limit: "50mb",
+    parameterLimit: 100000,
+  })
+);
+app.use(
+  bodyParser.json({
+    limit: "50mb",
+    parameterLimit: 100000,
+  })
+);
 
 
+
+// app.use(bodyParser.urlencoded({
+//         extended: false
+// }));
+// app.use(bodyParser.json());
 //////////
 app.use(function (err, req, res, next) {
     res.locals.message = err.message;
@@ -62,6 +83,6 @@ mongoose
 
 
 app.listen(6002,()=>{
-    console.log(`listening on port 5000`);
+    console.log(`listening on port 6002`);
   
   })

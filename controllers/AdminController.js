@@ -79,8 +79,9 @@ exports.addBlog = async (req, res) => {
   const images = req.files;
   let { title, description, publisherName, p1, p2, p3, p4, title2, date } =
     req.body;
+  // let { title} =req.body;
 
-    console.log("req.body",req.body)
+    // console.log("req.body",req.body,req.file.filename)
   try {
     let data = new Blog({
       title: title,
@@ -92,8 +93,8 @@ exports.addBlog = async (req, res) => {
       p4: p4,
       title2: title2,
       date: date,
-      img1: `https://defiant-newt-suspenders.cyclic.app/photo/${req.file.filename}`,
-      // img2: `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo2[0].filename}`,
+      img1: `http://localhost:6002/photo/${images.photo1[0].filename}`,
+      img2: `http://localhost:6002/photo/${images.photo2[0].filename}`,
   
     });
     await data.save();
