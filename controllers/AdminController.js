@@ -79,6 +79,8 @@ exports.addBlog = async (req, res) => {
   const images = req.files;
   let { title, description, publisherName, p1, p2, p3, p4, title2, date } =
     req.body;
+
+    console.log("req.body",req.body)
   try {
     let data = new Blog({
       title: title,
