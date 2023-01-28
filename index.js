@@ -6,6 +6,7 @@ const app = express();
 const adminRouter = require('./routes/AdminRoutes')
 
 app.use(express.json());
+const expressLayouts = require('express-ejs-layouts');
 
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
@@ -40,7 +41,12 @@ app.use(function (err, req, res, next) {
       credentials: true,
     })
   );
+
+  app.set('view engine', 'ejs');
+app.use(expressLayouts);
   ///////////
+
+
 mongoose.set("strictQuery", false);
 
 mongoose
