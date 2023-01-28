@@ -76,7 +76,7 @@ exports.loginAdmin = async (req, res) => {
 
 ///Add Blog
 exports.addBlog = async (req, res) => {
-  const images = req.files;
+  // const images = req.files;
   let { title, description, publisherName, p1, p2, p3, p4, title2, date } =
     req.body;
   // let { title} =req.body;
@@ -93,8 +93,8 @@ exports.addBlog = async (req, res) => {
       p4: p4,
       title2: title2,
       date: date,
-      img1: `http://localhost:6002/photo/${images.photo1[0].filename}`,
-      img2: `http://localhost:6002/photo/${images.photo2[0].filename}`,
+      img1: `http://localhost:6002/photo/${req.file.filename}`,
+      // img2: `http://localhost:6002/photo/${images.photo2[0].filename}`,
   
     });
     await data.save();
