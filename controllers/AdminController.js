@@ -97,15 +97,13 @@ exports.addBlog = async (req, res) => {
       //   img2:`http://localhost:5000/profile/${req.file.filename}`,
     });
     await data.save();
-   return res.send({
-    status:200,
+    res.status(200).json({
       message: "Blog Created",
       status: true,
       data,
     });
   } catch (error) {
-   return res.send({
-    status:404,
+    res.status(500).json({
       Error_Message: error,
       status: false,
       statusText: "Blog not created",
