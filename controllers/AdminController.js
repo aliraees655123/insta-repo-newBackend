@@ -98,17 +98,22 @@ exports.addBlog = async (req, res) => {
   
     });
     await data.save();
-    res.json({
+    res.status(200).json({
       message: "Blog Created",
       status: true,
       data,
     });
   } catch (error) {
-    res.json({
-      Error_Message: error,
-      status: false,
-      statusText: "Blog not created",
-    });
+    // res.status(500).json({
+    //   Error_Message: error,
+    //   status: false,
+    //   statusText: "Blog not created",
+    // });
+    res.status(error.status || 500);
+res.json({
+  message: error.message,
+  error: error
+});
   }
 };
 
