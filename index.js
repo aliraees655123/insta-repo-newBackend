@@ -16,8 +16,7 @@ app.use("/photo", express.static("upload"));
 app.use("/admin",adminRouter);
 
 ///
-pp.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
 
 
 app.use(
