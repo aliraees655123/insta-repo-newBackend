@@ -13,6 +13,7 @@ const adminRouter = require('./routes/AdminRoutes')
 app.use(express.json());
 // const expressLayouts = require('express-ejs-layouts');
 
+//////////////////
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use("/photo", express.static("upload"));
@@ -71,7 +72,7 @@ app.use(function (err, req, res, next) {
 //   app.set('view engine', 'ejs');
 // app.use(expressLayouts);
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 // Good for now
 // In the future, use connect-mongo or similar
