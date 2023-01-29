@@ -5,13 +5,14 @@ const cors = require("cors");
 const app = express();
 
 
-
+const path = require("path");
 
 
 const adminRouter = require('./routes/AdminRoutes')
 
+app.use(express.json({ limit: '50mb' }));
 app.use(express.json());
-// const expressLayouts = require('express-ejs-layouts');
+
 
 //////////////////
 app.use(express.urlencoded({ extended: true }))
@@ -26,7 +27,7 @@ app.use("/admin",adminRouter);
 
 app.use(
   bodyParser.urlencoded({
-    extended: true,
+    extended: false,
     limit: "50mb",
     parameterLimit: 100000,
   })
@@ -38,12 +39,17 @@ app.use(
   })
 );
 
+app.use(
+  cors({
+    origin: "*",
+    // credentials: true, //access-control-allow-credentials:true
+    // optionSuccessStatus: 200,
+  })
+);
+
+app.use("/photo", express.static(path.join(__dirname, "./upload")));
 
 
-// app.use(bodyParser.urlencoded({
-//         extended: false
-// }));
-// app.use(bodyParser.json());
 //////////
 app.use(function (err, req, res, next) {
     res.locals.message = err.message;
@@ -69,14 +75,6 @@ app.use(function (err, req, res, next) {
     })
   );
 
-//   app.set('view engine', 'ejs');
-// app.use(expressLayouts);
-
-// app.use(morgan('dev'));
-
-// Good for now
-// In the future, use connect-mongo or similar
-// for persistant sessions
 
 
   ///////////
