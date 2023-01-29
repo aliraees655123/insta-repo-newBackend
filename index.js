@@ -16,12 +16,10 @@ app.use("/photo", express.static("upload"));
 app.use("/admin",adminRouter);
 
 ///
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+pp.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 
-// app.use(express.json());
-// app.use(cors());
 app.use(
   bodyParser.urlencoded({
     extended: true,
