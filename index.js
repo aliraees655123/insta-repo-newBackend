@@ -47,7 +47,7 @@ app.use(
   })
 );
 
-app.use("/photo", express.static(path.join(__dirname, "./upload")));
+// app.use("/photo", express.static(path.join(__dirname, "./upload")));
 
 
 //////////
