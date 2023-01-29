@@ -2,11 +2,16 @@ const mongoose = require("mongoose");
 
 //user schema
 const TagSchema = mongoose.Schema({
-  name:{
+  title:{
     type: String,
     default:''
   },
   detail: {
+    type: String,
+    default:''
+    // unique: true,
+  },
+  page: {
     type: String,
     default:''
     // unique: true,

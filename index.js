@@ -5,12 +5,11 @@ const cors = require("cors");
 const app = express();
 
 
-const path = require("path");
+
 
 
 const adminRouter = require('./routes/AdminRoutes')
 
-app.use(express.json({ limit: '50mb' }));
 app.use(express.json());
 
 
@@ -27,7 +26,7 @@ app.use("/admin",adminRouter);
 
 app.use(
   bodyParser.urlencoded({
-    extended: false,
+    extended: true,
     limit: "50mb",
     parameterLimit: 100000,
   })
@@ -39,15 +38,7 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    origin: "*",
-    // credentials: true, //access-control-allow-credentials:true
-    // optionSuccessStatus: 200,
-  })
-);
 
-// app.use("/photo", express.static(path.join(__dirname, "./upload")));
 
 
 //////////
