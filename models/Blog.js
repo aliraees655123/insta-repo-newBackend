@@ -12,31 +12,40 @@ const blogSchema = mongoose.Schema({
   },
   description: {
     type: String,
+    default:''
    
   },
   publisherName: {
     type: String,
+    default:''
   },
   p1: {
     type: String,
+    default:''
   },
   p2: {
     type: String,
+    default:''
   },
   p3: {
     type: String,
+    default:''
   },
   p4: {
     type: String,
+    default:''
   },
   date: {
     type: String,
+    default:''
   },
   img1: {
     type: String,
+    default:''
   },
   img2: {
     type: String,
+    default:''
   },
 
  

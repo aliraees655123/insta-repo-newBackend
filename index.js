@@ -1,45 +1,29 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const bodyParser=require("body-parser")
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require('path')
+
 const app = express();
-
-
-
-
 
 const adminRouter = require('./routes/AdminRoutes')
 
 app.use(express.json());
+// const expressLayouts = require('express-ejs-layouts');
 
-
-//////////////////
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use("/photo", express.static("upload"));
 
 app.use("/admin",adminRouter);
 
-///
+app.use(bodyParser.json({ limit: '100mb' }));
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: true, parameterLimit: 50000 }));
 
 
-
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-    limit: "50mb",
-    parameterLimit: 100000,
-  })
-);
-app.use(
-  bodyParser.json({
-    limit: "50mb",
-    parameterLimit: 100000,
-  })
-);
-
-
-
+// View Engine Setup
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
 //////////
 app.use(function (err, req, res, next) {
@@ -66,8 +50,8 @@ app.use(function (err, req, res, next) {
     })
   );
 
-
-
+//   app.set('view engine', 'ejs');
+// app.use(expressLayouts);
   ///////////
 
 

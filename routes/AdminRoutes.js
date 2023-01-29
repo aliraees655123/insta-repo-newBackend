@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser=require("body-parser")
 const {registerAdmin,loginAdmin,addBlog,deleteBlog,getBlogs,updateBlog,
     addContent,getContents,updateContent,
     deleteContent,addTag,getTags,deleteTag,updateTag,findLink} =require('./../controllers/AdminController')
@@ -6,7 +7,8 @@ const router1 = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-
+router1.use(bodyParser.json({ limit: '100mb' }));
+router1.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 
 const storage = multer.diskStorage({
     destination: "./upload",
@@ -33,8 +35,8 @@ const storage = multer.diskStorage({
 
 router1.post('/register',  registerAdmin);
 router1.post('/login',  loginAdmin);
-router1.post("/addBlog", upload.single("photo1"), addBlog);
-router1.put("/updateBlog/:id", upload.single("photo"), updateBlog);
+router1.post("/addBlog",uploadFields, addBlog);
+router1.put("/updateBlog/:id", updateBlog);
 router1.delete("/deleteBlog/:id", deleteBlog);
 router1.get("/getBlogs", getBlogs);
 
