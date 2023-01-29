@@ -66,6 +66,19 @@ app.use(function (err, req, res, next) {
 
 //   app.set('view engine', 'ejs');
 // app.use(expressLayouts);
+
+app.use(morgan('dev'));
+
+// Good for now
+// In the future, use connect-mongo or similar
+// for persistant sessions
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(cookieParser());
+app.use(session({secret: 'building a blog', saveUninitialized: true, resave: true}));
+
   ///////////
 
 
