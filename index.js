@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ limit: '100mb', extended: true, parameterLimit: 
 
 
 // View Engine Setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+// app.set('views', path.join(__dirname, 'views'))
+// app.set('view engine', 'ejs')
 
 //////////
 app.use(function (err, req, res, next) {
