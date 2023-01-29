@@ -6,7 +6,7 @@ const app = express();
 
 
 
-var ejs = require('ejs');
+
 
 const adminRouter = require('./routes/AdminRoutes')
 
@@ -77,7 +77,7 @@ app.use(morgan('dev'));
 // In the future, use connect-mongo or similar
 // for persistant sessions
 
-app.set('view engine', ejs);
+
   ///////////
 
 
