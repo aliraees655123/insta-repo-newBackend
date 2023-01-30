@@ -36,7 +36,7 @@ const storage = multer.diskStorage({
 router1.post('/register',  registerAdmin);
 router1.post('/login',  loginAdmin);
 router1.post("/addBlog", upload.single('photo1'), addBlog);
-router1.put("/updateBlog/:id", updateBlog);
+router1.put("/updateBlog/:id",uploadFields, updateBlog);
 router1.delete("/deleteBlog/:id", deleteBlog);
 router1.get("/getBlogs", getBlogs);
 
