@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ limit: '100mb', extended: true, parameterLimit: 
 
 
 // View Engine Setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
+// app.set('views', path.join(__dirname, 'views'))
+// app.set('view engine', 'ejs')
 
 //////////
 // app.use(function (err, req, res, next) {
@@ -34,21 +34,21 @@ app.set('view engine', 'ejs')
 //     res.status(err.status || 500);
 //     res.render("error");
 //   });
-  app.use(
-    cors({
-      origin: "*",
-      optionsSuccessStatus: 200,
-      credentials: true,
-    })
-  );
-  app.options(
-    "*",
-    cors({
-      origin: "*",
-      optionsSuccessStatus: 200,
-      credentials: true,
-    })
-  );
+  // app.use(
+  //   cors({
+  //     origin: "*",
+  //     optionsSuccessStatus: 200,
+  //     credentials: true,
+  //   })
+  // );
+  // app.options(
+  //   "*",
+  //   cors({
+  //     origin: "*",
+  //     optionsSuccessStatus: 200,
+  //     credentials: true,
+  //   })
+  // );
 
 //   app.set('view engine', 'ejs');
 // app.use(expressLayouts);

@@ -96,7 +96,7 @@ exports.addBlog = async (req, res) => {
       date: date,
       
       // img1:photo1
-      img1: `http://localhost:6002/photo/$${req.file.filename}`,
+      img1: `http://localhost:6002/photo/${req.file.filename}`,
       // img1: `http://localhost:6002/photo/${images.photo1[0].filename}`,
       // img2: `http://localhost:6002/photo/${images.photo2[0].filename}`,
     });
