@@ -11,7 +11,7 @@ router1.use(bodyParser.json({ limit: '100mb' }));
 router1.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 
 const storage = multer.diskStorage({
-    destination: "/upload",
+    destination: "upload",
     filename: (req, file, cb) => {
       return cb(
         null,
