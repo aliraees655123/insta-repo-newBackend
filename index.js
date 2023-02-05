@@ -12,7 +12,7 @@ app.use(express.json());
 // const expressLayouts = require('express-ejs-layouts');
 
 app.use(express.urlencoded({ extended: true }))
-app.use(cors())
+app.use(cors());
 app.use("/photo", express.static("upload"));
 
 app.use("/admin",adminRouter);
@@ -24,6 +24,12 @@ app.use(bodyParser.urlencoded({ limit: '100mb', extended: true, parameterLimit: 
 // View Engine Setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 //////////
 // app.use(function (err, req, res, next) {
@@ -70,6 +76,7 @@ mongoose
 
 
 app.listen(6002,()=>{
-    console.log(`listening on port 6002`);
+    console.log(`listening ON port 6002`);
   
   })
+  
