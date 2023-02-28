@@ -76,6 +76,39 @@ const contentSchema = mongoose.Schema({
     type: String,
 
   },
+
+
+
+
+  abousUs:{
+    type: String,
+
+  },
+  blog:{
+    type: String,
+
+  },
+  feautureNav:{
+    type: String,
+
+  },
+  photoNav:{
+    type: String,
+
+  },
+  reelNav:{
+    type: String,
+
+  },
+  postNav:{
+    type: String,
+
+  },
+  videoNav:{
+    type: String,
+
+  },
+
 });
 //user Model
 module.exports.Content = mongoose.model("Content", contentSchema);

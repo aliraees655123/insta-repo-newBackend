@@ -96,7 +96,7 @@ exports.addBlog = async (req, res) => {
       date: date,
       
       // img1:photo1
-      img1: `http://localhost:6002/photo/${req.file.filename}`,
+      img1: `https://api.instastoryview.co.kr/photo/${req.file.filename}`,
       // img1: `http://localhost:6002/photo/${images.photo1[0].filename}`,
       // img2: `http://localhost:6002/photo/${images.photo2[0].filename}`,
     });
@@ -167,12 +167,12 @@ exports.updateBlog = async (req, res) => {
     if (images.photo1 != undefined) {
       if (images?.photo1[0]?.filename) {
         console.log("images.photo1[0].filename", images.photo1[0].filename);
-        data.img1 = `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo1[0].filename}`;
+        data.img1 = `https://api.instastoryview.co.kr/photo/${images.photo1[0].filename}`;
       }
     }
     if (images.photo2 != undefined) {
       if (images?.photo2[0]?.filename) {
-        data.img2 = `https://defiant-newt-suspenders.cyclic.app/photo/${images.photo2[0].filename}`;
+        data.img2 = `https://api.instastoryview.co.kr/photo/${images.photo2[0].filename}`;
       }
     }
 
@@ -219,6 +219,13 @@ exports.addContent = async (req, res) => {
     videoD,
     imageD,
     download,
+    abousUs,
+    blog,
+    feautureNav,
+    photoNav,
+    reelNav,
+    postNav,
+    videoNav,
   } = req.body;
   try {
     const contents = await Content.find();
@@ -251,6 +258,13 @@ exports.addContent = async (req, res) => {
         videoD,
         imageD,
         download,
+        abousUs,
+        blog,
+        feautureNav,
+        photoNav,
+        reelNav,
+        postNav,
+        videoNav,
       });
       await data.save();
       res.status(200).json({
@@ -309,6 +323,15 @@ exports.updateContent = async (req, res) => {
     videoD,
     imageD,
     download,
+
+
+    abousUs,
+    blog,
+    feautureNav,
+    photoNav,
+    reelNav,
+    postNav,
+    videoNav,
   } = req.body;
 
   let newData = {
@@ -334,6 +357,13 @@ exports.updateContent = async (req, res) => {
     videoD,
     imageD,
     download,
+    abousUs,
+    blog,
+    feautureNav,
+    photoNav,
+    reelNav,
+    postNav,
+    videoNav,
   };
   try {
     const contents = await Content.find();
