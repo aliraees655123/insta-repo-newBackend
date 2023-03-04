@@ -108,6 +108,46 @@ const contentSchema = mongoose.Schema({
     type: String,
 
   },
+  privacyP1:{
+    type: String,
+
+  },
+  privacyP2:{
+    type: String,
+
+  },
+  privacyP3:{
+    type: String,
+
+  },
+  privacyP4:{
+    type: String,
+
+  },
+  privacyP5:{
+    type: String,
+
+  },
+  term1:{
+    type: String,
+
+  },
+  term2:{
+    type: String,
+
+  },
+  term3:{
+    type: String,
+
+  },
+  term4:{
+    type: String,
+
+  },
+  term5:{
+    type: String,
+
+  },
 
 });
 //user Model

@@ -226,6 +226,17 @@ exports.addContent = async (req, res) => {
     reelNav,
     postNav,
     videoNav,
+    privacyP1,
+    privacyP2,
+    privacyP3,
+    privacyP4,
+    privacyP5,
+    term1,
+    term2,
+    term3,
+    term4,
+    term5,
+
   } = req.body;
   try {
     const contents = await Content.find();
@@ -265,6 +276,16 @@ exports.addContent = async (req, res) => {
         reelNav,
         postNav,
         videoNav,
+        privacyP1,
+        privacyP2,
+        privacyP3,
+        privacyP4,
+        privacyP5,
+        term1,
+        term2,
+        term3,
+        term4,
+        term5,
       });
       await data.save();
       res.status(200).json({
@@ -332,6 +353,16 @@ exports.updateContent = async (req, res) => {
     reelNav,
     postNav,
     videoNav,
+    privacyP1,
+    privacyP2,
+    privacyP3,
+    privacyP4,
+    privacyP5,
+    term1,
+    term2,
+    term3,
+    term4,
+    term5,
   } = req.body;
 
   let newData = {
@@ -364,6 +395,16 @@ exports.updateContent = async (req, res) => {
     reelNav,
     postNav,
     videoNav,
+    privacyP1,
+    privacyP2,
+    privacyP3,
+    privacyP4,
+    privacyP5,
+    term1,
+    term2,
+    term3,
+    term4,
+    term5,
   };
   try {
     const contents = await Content.find();
